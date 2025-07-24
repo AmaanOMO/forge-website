@@ -7,12 +7,12 @@ const Navbar = () => {
   
   return (
     <nav className="w-full py-6 px-8 md:px-16 flex items-center justify-between sticky top-0 z-50 bg-[#f9f6f2]/95 backdrop-blur-sm border-b border-gray-200/50">
-      <div className="font-serif font-bold text-2xl">Forge</div>
+      <a href="/" className="font-serif font-bold text-[26px] hover:text-[#005bbb] transition-colors cursor-pointer">Forge</a>
       <div className="hidden md:flex items-center space-x-6">
-        <a href="#" className="hover:text-[#005bbb] transition-colors">
+        <a href="/about" className="hover:text-[#005bbb] transition-colors">
           About
         </a>
-        <a href="#" className="hover:text-[#005bbb] transition-colors">
+        <a href="https://lu.ma/ubforge?period=past" target="_blank" rel="noopener noreferrer" className="hover:text-[#005bbb] transition-colors">
           Events
         </a>
         <a href="#" className="hover:text-[#005bbb] transition-colors">
@@ -41,10 +41,10 @@ const Navbar = () => {
           </button>
           {cultureOpen && (
             <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 z-10">
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+              <a href="/sunsesh" className="block px-4 py-2 hover:bg-gray-100">
                 SunSesh
               </a>
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+              <a href="/firesides" className="block px-4 py-2 hover:bg-gray-100">
                 Fireside
               </a>
               <a href="#" className="block px-4 py-2 hover:bg-gray-100">
@@ -53,11 +53,11 @@ const Navbar = () => {
             </div>
           )}
         </div>
-        <a href="#" className="hover:text-[#005bbb] transition-colors">
+        <a href="/startup-fair" className="hover:text-[#005bbb] transition-colors">
           Startup Fair
         </a>
       </div>
-      <div className="w-14 h-14 flex items-center justify-center">
+      <div className="w-16 h-16 flex items-center justify-center">
         <img 
           src="/myImages/forgeLogo.png" 
           alt="Forge Logo" 

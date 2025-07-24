@@ -5,6 +5,7 @@ import ScrollingBanner from '../components/ScrollingBanner'
 import ForWhom from '../components/ForWhom'
 import Culture from '../components/Culture'
 import JoinCta from '../components/JoinCta'
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ForWhom />
       <Culture />
       <JoinCta />
+      <Footer />
     </div>
   )
 }

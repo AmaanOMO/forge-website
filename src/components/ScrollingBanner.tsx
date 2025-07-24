@@ -14,7 +14,7 @@ const ScrollingBanner = () => {
   ]
 
   return (
-    <div className="w-full bg-[#f9f6f2] py-8 overflow-hidden">
+    <div className="w-full py-8 overflow-hidden bg-[#f9f6f2]">
       <div className="relative">
         <div className="flex animate-scroll-left hover:pause">
           {companies.map((company, index) => (
