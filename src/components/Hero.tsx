@@ -95,13 +95,13 @@ const Hero = () => {
           className="mt-16 space-y-6 opacity-0 transform translate-y-4 transition-all duration-700"
         >
           <a
-            href="#"
+            href="/sunsesh"
             className="block uppercase tracking-widest text-sm font-light hover:text-[#005bbb] transition-colors"
           >
             SunSesh
           </a>
           <a
-            href="#"
+            href="/firesides"
             className="block uppercase tracking-widest text-sm font-light hover:text-[#005bbb] transition-colors"
           >
             Firesides
@@ -119,9 +119,12 @@ const Hero = () => {
           ref={ubSectionRef}
           className="mt-16 opacity-0 transform translate-y-4 transition-all duration-700"
         >
-          <h3 className="font-serif text-2xl md:text-3xl font-light text-black mb-8 text-left">
-            University at Buffalo's home for tomorrow's leaders.
+          <h3 className="font-serif text-2xl md:text-3xl font-light text-black mb-4 text-left">
+            Forge is the University at Buffalo's home for tomorrow's leaders.
           </h3>
+          <p className="text-sm md:text-base text-gray-600 mb-8 text-left">
+            We host industry talks and weekly co-working sessions to work on your passion projects.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="px-8 py-3 rounded-full border-2 border-[#005bbb] text-[#005bbb] font-medium hover:bg-[#005bbb] hover:text-white transition-colors duration-300">
               → See what's happening
