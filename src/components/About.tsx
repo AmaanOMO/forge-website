@@ -1,18 +1,13 @@
 'use client'
 
 import React from 'react'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const About = () => {
-  const { elementRef: sectionRef, isVisible: sectionVisible } = useScrollAnimation<HTMLElement>()
 
   return (
     <section 
-      ref={sectionRef}
       id="about-section" 
-      className={`w-full bg-[#fdfcf8] py-24 transition-all duration-800 ${
-        sectionVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
-      }`}
+      className="w-full bg-[#fdfcf8] py-24"
     >
       <div className="max-w-3xl mx-auto text-center px-8">
         <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-black">

@@ -48,7 +48,9 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/ub.forge"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-[#005bbb] rounded-full flex items-center justify-center hover:bg-[#004499] transition-colors"
                 aria-label="Instagram"
               >
@@ -76,7 +78,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Get Involved</h4>
             <a 
-              href="https://lu.ma/ubforge?period=past"
+              href="https://lu.ma/ubforge?k=c&period=past"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#005bbb] text-white px-6 py-3 rounded-lg hover:bg-[#004499] transition-colors font-medium"

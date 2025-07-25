@@ -1,8 +1,7 @@
 'use client'
 
 import React from 'react'
-import { Sun, Flame, Globe } from 'lucide-react'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { Laptop, Flame, Globe } from 'lucide-react'
 
 interface CultureCardProps {
   title: string
@@ -11,8 +10,8 @@ interface CultureCardProps {
   image?: string
 }
 
-const CultureCard = ({ title, description, icon: Icon, image }: CultureCardProps) => {
-  return (
+const CultureCard = ({ title, description, icon: Icon, image, href }: CultureCardProps & { href?: string }) => {
+  const CardContent = () => (
     <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer group">
       <div className="p-6">
         {image && (
@@ -30,18 +29,23 @@ const CultureCard = ({ title, description, icon: Icon, image }: CultureCardProps
           </div>
           <h3 className="font-serif text-xl font-bold text-black">{title}</h3>
         </div>
-        <p className="text-gray-600 text-sm leading-relaxed mb-4">{description}</p>
-        <button className="text-[#005bbb] font-medium text-sm hover:text-[#004a99] transition-colors">
-          Learn more →
-        </button>
+        <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
       </div>
     </div>
   )
+
+  if (href) {
+    return (
+      <a href={href} className="block">
+        <CardContent />
+      </a>
+    )
+  }
+
+  return <CardContent />
 }
 
 const Culture = () => {
-  const { elementRef: cardsRef, isVisible: cardsVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.3 })
-  const { elementRef: textRef, isVisible: textVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 })
 
   return (
     <section className="w-full bg-[#fdfcf8] py-24">
@@ -49,23 +53,22 @@ const Culture = () => {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
           {/* Left Side - Visual Grid */}
           <div 
-            ref={cardsRef}
-            className={`lg:w-3/5 transition-all duration-800 ${
-              cardsVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
-            }`}
+            className="lg:w-3/5"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <CultureCard
                 title="SunSesh"
                 description="Collaborative Sunday build sessions where ideas come to life through teamwork and shared expertise."
-                icon={Sun}
+                icon={Laptop}
                 image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                href="/sunsesh"
               />
               <CultureCard
                 title="FireSides"
-                description="Weekly speaker events featuring student founders, engineers, and mentors sharing their journeys and insights."
+                description="Weekly speaker events featuring founders, engineers, and mentors sharing their journeys and insights."
                 icon={Flame}
                 image="https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                href="/firesides"
               />
               <CultureCard
                 title="Atlas"
@@ -78,10 +81,7 @@ const Culture = () => {
 
           {/* Right Side - Text Content */}
           <div 
-            ref={textRef}
-            className={`lg:w-2/5 transition-all duration-800 ${
-              textVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
-            }`}
+            className="lg:w-2/5"
           >
             <div className="mb-8">
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
@@ -92,7 +92,7 @@ const Culture = () => {
             <div className="max-w-md">
               <p className="text-lg leading-relaxed text-gray-700">
                 From weekend jam sessions to inspiring guest talks and hackathon
-                showcases — Forge is built on more than just code. Our culture is
+                showcases. Forge is built on more than just code. Our culture is
                 where ambitious ideas take shape, whether you're building a startup,
                 a robot, or a fashion brand.
               </p>

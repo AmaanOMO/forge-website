@@ -1,11 +1,9 @@
 'use client'
 
 import React, { useEffect, useRef } from 'react'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const JoinCta = () => {
   const backgroundRef = useRef<HTMLDivElement>(null)
-  const { elementRef: contentRef, isVisible: contentVisible } = useScrollAnimation<HTMLDivElement>()
 
   useEffect(() => {
     // Create subtle animated background effect
@@ -53,10 +51,7 @@ const JoinCta = () => {
     <section className="w-full bg-[#fdfcf8] py-32 relative overflow-hidden">
       <div ref={backgroundRef} className="absolute inset-0 z-0"></div>
       <div 
-        ref={contentRef}
-        className={`max-w-4xl mx-auto text-center px-8 relative z-10 transition-all duration-800 ${
-          contentVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
-        }`}
+        className="max-w-4xl mx-auto text-center px-8 relative z-10"
       >
         <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-black">
           If you're ambitious, you're already one of us
@@ -80,7 +75,7 @@ const JoinCta = () => {
         </p>
         <div className="flex justify-center">
           <a
-            href="https://lu.ma/ubforge?period=past"
+            href="https://lu.ma/ubforge?k=c&period=past"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#005bbb] underline hover:text-[#004a99] transition-colors text-xl font-medium"
