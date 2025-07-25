@@ -39,7 +39,9 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="#" 
+                href="https://x.com/ubforge?s=21" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-[#005bbb] rounded-full flex items-center justify-center hover:bg-[#004499] transition-colors"
                 aria-label="Twitter"
               >

@@ -19,11 +19,11 @@ export default function StartupFair() {
           
           <div className="text-xl md:text-2xl leading-relaxed mb-12 text-gray-700 space-y-6">
             <p>
-              We&apos;re working to bring together some of the most exciting startups around Buffalo to showcase what they&apos;re building and maybe even hire some of you. Whether you&apos;re looking to get inspired, find your next opportunity, or just see what&apos;s being built nearby, this is your chance.
+              We're working to bring together some of the most exciting startups around Buffalo to showcase what they're building and maybe even hire some of you. Whether you're looking to get inspired, find your next opportunity, or just see what's being built nearby, this is your chance.
             </p>
             
             <p>
-              We&apos;re in the early stages, actively planning this and hope it happens soon. Stay tuned and in the meantime, come meet us at a SunSesh or a Fireside!
+              We're in the early stages, actively planning this and hope it happens soon. Stay tuned and in the meantime, come meet us at a SunSesh or a Fireside!
             </p>
           </div>
           
@@ -33,7 +33,7 @@ export default function StartupFair() {
             rel="noopener noreferrer"
             className="inline-block border-2 border-[#005bbb] text-[#005bbb] bg-transparent px-6 py-3 rounded-lg hover:bg-[#005bbb] hover:text-white transition-colors font-medium"
           >
-            Check what&apos;s next
+                          Check what's next
           </a>
         </div>
       </section>

@@ -52,20 +52,20 @@ const JoinCta = () => {
         className="max-w-4xl mx-auto text-center px-8 relative z-10"
       >
         <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-black">
-          If you&apos;re ambitious, you&apos;re already one of us
+                      If you're ambitious, you're already one of us
         </h2>
         <div className="flex justify-center items-center mb-10">
           <div className="h-1 w-24 bg-[#005bbb]"></div>
         </div>
         <p className="text-xl md:text-2xl leading-relaxed mb-12 max-w-3xl mx-auto">
-          If you&apos;re dreaming big, building things, or just curious — you&apos;re in
+                      If you're dreaming big, building things, or just curious — you're in
           the right place. Forge is for anyone who wants to make something real.
           No resume required, just a bit of guts.
         </p>
         <p className="text-lg mb-8">
-          Pull up to a SunSesh. Chat at a Fireside. Submit to Atlas.
+          Pull up to a SunSesh. Chat at a Fireside. Find life-long friends.
           <br />
-          This is your invite. We&apos;ll be right here when you&apos;re ready to start.
+                      This is your invite. We'll be right here when you're ready to start.
         </p>
         <p className="text-base text-gray-600 mb-10">
           Come meet us, join an event, or just hang out. It all starts with

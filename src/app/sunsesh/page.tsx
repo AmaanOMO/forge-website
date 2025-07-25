@@ -14,7 +14,7 @@ export default function SunSesh() {
           </h1>
           
           <p className="text-xl md:text-2xl leading-relaxed mb-12 text-gray-700">
-            Our signature Sunday work sessions where builders across UB meet up to co-work, vibe, and push progress on their projects. Bring your laptop, your idea, or just yourself.
+            Our signature Sunday work sessions where builders across UB meet up to co-work, connect, and push progress on their projects. Bring your laptop, your idea, or just yourself.
           </p>
           
           <a 
