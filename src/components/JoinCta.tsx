@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react'
 
 const JoinCta = () => {
+  // Ref for the animated background sparkles
   const backgroundRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -10,23 +11,20 @@ const JoinCta = () => {
     const background = backgroundRef.current
     if (!background) return
 
-    // Create sparkle elements
+    // Create animated sparkle elements
     for (let i = 0; i < 30; i++) {
       const sparkle = document.createElement('div')
       sparkle.className = 'absolute rounded-full bg-[#005bbb] opacity-0'
-      // Random size - increased from 2-8px to 4-12px
-      const size = Math.random() * 8 + 4
+      const size = Math.random() * 8 + 4 // Random size between 4-12px
       sparkle.style.width = `${size}px`
       sparkle.style.height = `${size}px`
-      // Random position
-      sparkle.style.left = `${Math.random() * 100}%`
-      sparkle.style.top = `${Math.random() * 100}%`
-      // Animation with random delays
-      sparkle.style.animation = `sparkle 3s ease-in-out ${Math.random() * 5}s infinite`
+      sparkle.style.left = `${Math.random() * 100}%` // Random horizontal position
+      sparkle.style.top = `${Math.random() * 100}%` // Random vertical position
+      sparkle.style.animation = `sparkle 3s ease-in-out ${Math.random() * 5}s infinite` // Random delay for staggered effect
       background.appendChild(sparkle)
     }
 
-    // Create keyframe animation
+    // Inject CSS keyframes for sparkle animation
     if (!document.getElementById('sparkle-animation')) {
       const style = document.createElement('style')
       style.id = 'sparkle-animation'

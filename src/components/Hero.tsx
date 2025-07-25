@@ -3,17 +3,20 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 const Hero = () => {
+  // Refs for staggered fade-in animations
   const headingRef = useRef<HTMLDivElement>(null)
   const subheadingRef = useRef<HTMLDivElement>(null)
   const linksRef = useRef<HTMLDivElement>(null)
   const videoContainerRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
   const ubSectionRef = useRef<HTMLDivElement>(null)
+  
+  // Video control states
   const [showControls, setShowControls] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
 
   useEffect(() => {
-    // Simple fade-in animation
+    // Staggered fade-in animation sequence
     const heading = headingRef.current
     const subheading = subheadingRef.current
     const links = linksRef.current
@@ -47,7 +50,7 @@ const Hero = () => {
   const scrollToAbout = () => {
     const aboutSection = document.querySelector('#about-section')
     if (aboutSection) {
-      const offset = 50 // Add 50px offset above the section
+      const offset = 50 // Account for sticky navbar
       const elementPosition = aboutSection.getBoundingClientRect().top
       const offsetPosition = elementPosition + window.pageYOffset - offset
       
@@ -162,7 +165,7 @@ const Hero = () => {
             Your browser does not support the video tag.
           </video>
         
-        {/* Video Controls Bar */}
+        {/* Video Controls Bar - appears on hover */}
         {showControls && (
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent h-16 flex items-end transition-all duration-300 pointer-events-none">
             <div className="w-full flex justify-between items-center p-4 pointer-events-auto">

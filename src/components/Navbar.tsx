@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 
 const Navbar = () => {
+  // Toggle state for Culture dropdown menu
   const [cultureOpen, setCultureOpen] = useState(false)
   
   return (

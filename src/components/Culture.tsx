@@ -3,6 +3,7 @@
 import React from 'react'
 import { Laptop, Flame, Globe } from 'lucide-react'
 
+// Props interface for culture cards
 interface CultureCardProps {
   title: string
   description: string
@@ -11,6 +12,7 @@ interface CultureCardProps {
 }
 
 const CultureCard = ({ title, description, icon: Icon, image, href }: CultureCardProps & { href?: string }) => {
+  // Card content component - can be wrapped in link or rendered standalone
   const CardContent = () => (
     <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer group">
       <div className="p-6">
@@ -34,6 +36,7 @@ const CultureCard = ({ title, description, icon: Icon, image, href }: CultureCar
     </div>
   )
 
+  // Conditionally wrap in link if href is provided
   if (href) {
     return (
       <a href={href} className="block">
