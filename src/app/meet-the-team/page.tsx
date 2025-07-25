@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 
@@ -73,10 +74,11 @@ export default function MeetTheTeam() {
                   {teamMembers.map((member, index) => (
                     <div key={index} className="group relative">
                       <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto">
-                        <img
+                        <Image
                           src={member.image}
                           alt={member.name}
-                          className="w-full h-full rounded-full object-cover hover:scale-105 transition-transform duration-300"
+                          fill
+                          className="rounded-full object-cover hover:scale-105 transition-transform duration-300"
                         />
                         
                         {/* Hover Overlay */}

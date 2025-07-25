@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 
@@ -15,14 +16,14 @@ export default function About() {
       subtitle: "Where it all began.",
       content: "Back in Spring 2025, Amaan Sheikh noticed something missing at UB, a space for students who just wanted to build things outside of class. He started reaching out to founders, engineers, and leaders he admired for advice, and everyone seemed to agree: UB needed a community like this.",
       additionalContent: "That idea became Forge. It started small: just a few messages, some calls, and a bunch of “yeah, this should exist” moments. Soon, a team came together, all excited to help make UB a place where future founders, devs, designers, and creatives could start building together.",
-      additionalContent2: "We hosted our first info session and our first ever pitch night that semester, it wasn't perfect, but it was packed, and filled with momentum. That summer, Amaan doubled down: connecting with alumni in Silicon Valley, getting advice from top schools' campus orgs, and building infrastructure with the team to launch strong in the fall.",
+      additionalContent2: "We hosted our first info session and our first ever pitch night that semester, it wasn&apos;t perfect, but it was packed, and filled with momentum. That summer, Amaan doubled down: connecting with alumni in Silicon Valley, getting advice from top schools&apos; campus orgs, and building infrastructure with the team to launch strong in the fall.",
       additionalContent3: "From a missing piece to a growing community, that’s how Forge began."
 
     },
     F25: {
       title: "F25", 
       subtitle: "Our first full term. The real build begins.",
-      content: "We're expanding in Fall 2025 with so much more: internal systems for mentorship and logistics, sunday build sessions, fireside talks and our first large-scale events. We're building the club we always wanted to be part of — and you're invited."
+      content: "We&apos;re expanding in Fall 2025 with so much more: internal systems for mentorship and logistics, sunday build sessions, fireside talks and our first large-scale events. We&apos;re building the club we always wanted to be part of — and you&apos;re invited."
     }
   }
 
@@ -45,10 +46,11 @@ export default function About() {
         <div className="max-w-6xl mx-auto animate-fade-up">
           {/* Banner Image */}
           <div className="w-full h-64 md:h-80 rounded-lg mb-12 relative overflow-hidden">
-            <img 
+            <Image 
               src="/myImages/firstpitchnight1.png" 
               alt="First Pitch Night at Forge"
-              className="w-full h-full object-cover object-center"
+              fill
+              className="object-cover object-center"
               style={{ objectPosition: 'center 62%' }}
             />
           </div>
@@ -107,27 +109,30 @@ export default function About() {
                 
                 {/* Three Images Layout */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                  <div className="bg-gray-200 rounded-lg h-64 overflow-hidden">
-                    <img
+                  <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative">
+                    <Image
                       src="/myImages/pitchpicture.png"
                       alt="First Meeting Space"
-                      className="w-full h-full object-cover object-center"
+                      fill
+                      className="object-cover object-center"
                       style={{ objectPosition: 'center 50%' }}
                     />
                   </div>
-                  <div className="bg-gray-200 rounded-lg h-64 overflow-hidden">
-                    <img
+                  <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative">
+                    <Image
                       src="/myImages/joinForge.jpg"
                       alt="Early Community"
-                      className="w-full h-full object-cover object-center"
+                      fill
+                      className="object-cover object-center"
                       style={{ objectPosition: 'center 50%', transform: 'scale(1)' }}
                     />
                   </div>
-                  <div className="bg-gray-200 rounded-lg h-64 overflow-hidden">
-                    <img
+                  <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative">
+                    <Image
                       src="/myImages/speaker2.jpg"
                       alt="First Build Session"
-                      className="w-full h-full object-cover object-center"
+                      fill
+                      className="object-cover object-center"
                       style={{ objectPosition: 'center 40%' }}
                     />
                   </div>

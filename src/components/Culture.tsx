@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import { Laptop, Flame, Globe } from 'lucide-react'
 
 // Props interface for culture cards
@@ -17,11 +18,12 @@ const CultureCard = ({ title, description, icon: Icon, image, href }: CultureCar
     <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer group">
       <div className="p-6">
         {image && (
-          <div className="w-full h-32 bg-gray-100 rounded-lg mb-4 overflow-hidden">
-            <img 
+          <div className="w-full h-32 bg-gray-100 rounded-lg mb-4 overflow-hidden relative">
+            <Image 
               src={image} 
               alt={title}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              fill
+              className="object-cover group-hover:scale-110 transition-transform duration-300"
             />
           </div>
         )}
@@ -96,7 +98,7 @@ const Culture = () => {
               <p className="text-lg leading-relaxed text-gray-700">
                 From weekend jam sessions to inspiring guest talks and hackathon
                 showcases. Forge is built on more than just code. Our culture is
-                where ambitious ideas take shape, whether you're building a startup,
+                where ambitious ideas take shape, whether you&apos;re building a startup,
                 a robot, or a fashion brand.
               </p>
             </div>

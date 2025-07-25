@@ -17,18 +17,18 @@ const About = () => {
           <div className="h-1 w-16 bg-[#005bbb]"></div>
         </div>
         <p className="text-lg md:text-xl leading-relaxed mb-8">
-          Whether it's your first project or the next billion-dollar idea, Forge is where it starts.
+          Whether it&apos;s your first project or the next billion-dollar idea, Forge is where it starts.
           Tap into a network of UB alumni in Silicon Valley, startup founders, and engineers from top tech companies.
           <br className="hidden md:block" />
           <br className="hidden md:block" />
-          We give you the space, community, and momentum to build what's next.
+          We give you the space, community, and momentum to build what&apos;s next.
         </p>
         
         <div className="text-lg md:text-xl font-medium text-gray-800 mb-4">
           Show up → Meet cool people → Build great things → Repeat
         </div>
         <p className="text-base md:text-lg text-gray-600">
-          and before you know it, you've got your first MVP, team, and maybe even a startup.
+          and before you know it, you&apos;ve got your first MVP, team, and maybe even a startup.
         </p>
       </div>
     </section>
