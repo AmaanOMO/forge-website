@@ -16,7 +16,7 @@ const Navbar = () => {
         <a href="https://lu.ma/ubforge?k=c&period=past" target="_blank" rel="noopener noreferrer" className="hover:text-[#005bbb] transition-colors">
           Events
         </a>
-        <a href="#" className="hover:text-[#005bbb] transition-colors">
+        <a href="/projects" className="hover:text-[#005bbb] transition-colors">
           Projects
         </a>
         <div className="relative">
@@ -48,7 +48,7 @@ const Navbar = () => {
               <a href="/firesides" className="block px-4 py-2 hover:bg-gray-100">
                 Fireside
               </a>
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+              <a href="/atlas" className="block px-4 py-2 hover:bg-gray-100">
                 Atlas
               </a>
             </div>
