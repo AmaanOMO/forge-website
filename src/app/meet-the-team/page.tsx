@@ -5,13 +5,16 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 
 export default function MeetTheTeam() {
+  // State for team period selection (F25, S26, etc.)
   const [activePeriod, setActivePeriod] = useState('F25')
 
+  // Team period configuration - future periods are disabled
   const periods = [
     { id: 'F25', label: 'F25', active: true },
     { id: 'S26', label: 'S26', active: false }
   ]
 
+  // Placeholder team data - replace with real team members later
   const teamMembers = [
     { name: 'Meowndalf the Great', image: '/myImages/wisecat.png' },
     { name: 'Meowndalf the Great', image: '/myImages/wisecat.png' },

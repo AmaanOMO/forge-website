@@ -5,8 +5,10 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 
 export default function About() {
+  // State for timeline period selection (S25, F25, etc.)
   const [activePeriod, setActivePeriod] = useState('S25')
 
+  // Timeline content data for each period
   const timelineData = {
     S25: {
       title: "S25",
@@ -24,6 +26,7 @@ export default function About() {
     }
   }
 
+  // Timeline button configuration - future periods are disabled
   const periods = [
     { id: 'S25', label: 'S25', active: true },
     { id: 'F25', label: 'F25', active: true },
