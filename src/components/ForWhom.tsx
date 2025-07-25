@@ -13,17 +13,17 @@ const ForWhom = () => {
           className="md:w-1/2 md:pr-12 mb-12 md:mb-0"
         >
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 text-black">
-            This isn&apos;t just a club, it&apos;s a
+            This isn't just a club, it's a
             <span className="relative inline-block mx-2">
               <span className="relative z-10">launchpad.</span>
               <span className="absolute inset-0 border-2 border-[#005bbb] transform translate-y-1 translate-x-1"></span>
             </span>
           </h2>
           <p className="text-lg md:text-xl leading-relaxed mb-6">
-            Come jam with engineers, artists, designers, and founders on campus who want to build what&apos;s next, together.
+            Come jam with engineers, artists, designers, and founders on campus who want to build what's next, together.
           </p>
           <p className="text-base text-gray-600 leading-relaxed">
-            We&apos;re open to all majors and all skill levels. If you&apos;ve got the ambition, we&apos;ve got the tools, the community, and the drive.
+            We're open to all majors and all skill levels. If you've got the ambition, we've got the tools, the community, and the drive.
           </p>
         </div>
         {/* Right Column - Visual Content */}

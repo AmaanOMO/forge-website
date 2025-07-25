@@ -21,7 +21,7 @@ export default function Atlas() {
                 Atlas
               </h1>
               <p className="text-xl md:text-2xl leading-relaxed mb-8">
-                This page is currently under construction. So for now, here&apos;s a picture of Meowndalf The Great to keep you company.
+                This page is currently under construction. So for now, here's a picture of Meowndalf The Great to keep you company.
               </p>
               <div className="bg-white rounded-lg p-8 shadow-lg">
                 <h3 className="font-serif text-3xl font-bold mb-4">🧙‍♂️ Meowndalf The Great</h3>

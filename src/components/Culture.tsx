@@ -80,6 +80,7 @@ const Culture = () => {
                 description="A visual gallery of hackathons Forge members have attended, connecting our community to innovation worldwide."
                 icon={Globe}
                 image="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                href="/atlas"
               />
             </div>
           </div>
@@ -98,7 +99,7 @@ const Culture = () => {
               <p className="text-lg leading-relaxed text-gray-700">
                 From weekend jam sessions to inspiring guest talks and hackathon
                 showcases. Forge is built on more than just code. Our culture is
-                where ambitious ideas take shape, whether you&apos;re building a startup,
+                where ambitious ideas take shape, whether you're building a startup,
                 a robot, or a fashion brand.
               </p>
             </div>

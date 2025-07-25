@@ -14,7 +14,7 @@ export default function Firesides() {
           </h1>
           
           <p className="text-xl md:text-2xl leading-relaxed mb-12 text-gray-700">
-            Laid-back fireside talks with builders, founders, and engineers across the startup/tech space. We bring in advice, stories, and lessons from the people who have been there and done that.
+            Laid-back fireside talks with builders, founders, and engineers across the startup/tech space. We bring in advice, stories, and lessons from the people who have been there and done great things.
           </p>
           
           <a 
