@@ -110,7 +110,7 @@ const Hero = () => {
             Firesides
           </a>
           <a
-            href="#"
+            href="/atlas"
             className="block uppercase tracking-widest text-sm font-light hover:text-[#005bbb] transition-colors"
           >
             Atlas
