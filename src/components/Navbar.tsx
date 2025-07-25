@@ -1,6 +1,8 @@
 'use client'
 
 import React, { useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const Navbar = () => {
   // Toggle state for Culture dropdown menu
@@ -8,17 +10,17 @@ const Navbar = () => {
   
   return (
     <nav className="w-full py-6 px-8 md:px-16 flex items-center justify-between sticky top-0 z-50 bg-[#f9f6f2]/95 backdrop-blur-sm border-b border-gray-200/50">
-      <a href="/" className="font-serif font-bold text-[26px] hover:text-[#005bbb] transition-colors cursor-pointer">Forge</a>
+      <Link href="/" className="font-serif font-bold text-[26px] hover:text-[#005bbb] transition-colors cursor-pointer">Forge</Link>
       <div className="hidden md:flex items-center space-x-6">
-        <a href="/about" className="hover:text-[#005bbb] transition-colors">
+        <Link href="/about" className="hover:text-[#005bbb] transition-colors">
           About
-        </a>
+        </Link>
         <a href="https://lu.ma/ubforge?k=c&period=past" target="_blank" rel="noopener noreferrer" className="hover:text-[#005bbb] transition-colors">
           Events
         </a>
-        <a href="/projects" className="hover:text-[#005bbb] transition-colors">
+        <Link href="/projects" className="hover:text-[#005bbb] transition-colors">
           Projects
-        </a>
+        </Link>
         <div className="relative">
           <button
             className="flex items-center hover:text-[#005bbb] transition-colors"
@@ -42,26 +44,28 @@ const Navbar = () => {
           </button>
           {cultureOpen && (
             <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 z-10">
-              <a href="/sunsesh" className="block px-4 py-2 hover:bg-gray-100">
+              <Link href="/sunsesh" className="block px-4 py-2 hover:bg-gray-100">
                 SunSesh
-              </a>
-              <a href="/firesides" className="block px-4 py-2 hover:bg-gray-100">
+              </Link>
+              <Link href="/firesides" className="block px-4 py-2 hover:bg-gray-100">
                 Fireside
-              </a>
-              <a href="/atlas" className="block px-4 py-2 hover:bg-gray-100">
+              </Link>
+              <Link href="/atlas" className="block px-4 py-2 hover:bg-gray-100">
                 Atlas
-              </a>
+              </Link>
             </div>
           )}
         </div>
-        <a href="/startup-fair" className="hover:text-[#005bbb] transition-colors">
+        <Link href="/startup-fair" className="hover:text-[#005bbb] transition-colors">
           Startup Fair
-        </a>
+        </Link>
       </div>
       <div className="w-16 h-16 flex items-center justify-center">
-        <img 
+        <Image 
           src="/myImages/forgeLogo.png" 
           alt="Forge Logo" 
+          width={64}
+          height={64}
           className="w-full h-full object-contain"
         />
       </div>

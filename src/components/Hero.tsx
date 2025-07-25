@@ -91,7 +91,7 @@ const Hero = () => {
           ref={subheadingRef}
           className="font-serif italic text-5xl md:text-6xl lg:text-7xl mt-2 opacity-0 transform translate-y-4 transition-all duration-700"
         >
-          what's next
+          what&apos;s next
         </div>
         <div
           ref={linksRef}
@@ -123,7 +123,7 @@ const Hero = () => {
           className="mt-8 opacity-0 transform translate-y-4 transition-all duration-700"
         >
           <h3 className="font-serif text-2xl md:text-3xl font-light text-black mb-4 text-left">
-            Forge is the University at Buffalo's home for tomorrow's leaders.
+            Forge is the University at Buffalo&apos;s home for tomorrow&apos;s leaders.
           </h3>
           <p className="text-sm md:text-base text-gray-600 mb-8 text-left">
           We gather builders weekly to learn, collaborate, build, and much more through our SunSesh and Fireside events.
@@ -135,7 +135,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="inline-block px-8 py-3 rounded-full border-2 border-[#005bbb] text-[#005bbb] font-medium hover:bg-[#005bbb] hover:text-white transition-colors duration-300"
             >
-              → See what's happening
+              → See what&apos;s happening
             </a>
             <button 
               onClick={scrollToAbout}
