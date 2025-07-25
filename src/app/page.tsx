@@ -12,8 +12,8 @@ export default function Home() {
     <div className="w-full min-h-screen bg-[#f9f6f2] text-black">
       <Navbar />
       <Hero />
-      <About />
       <ScrollingBanner />
+      <About />
       <ForWhom />
       <Culture />
       <JoinCta />

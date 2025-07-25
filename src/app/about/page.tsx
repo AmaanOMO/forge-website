@@ -11,9 +11,11 @@ export default function About() {
     S25: {
       title: "S25",
       subtitle: "Where it all began.",
-      content: "In Spring 2025, Amaan Sheikh saw a gap — UB had talent, but no real space for builders to consistently connect, experiment, and ship. Inspired by other campus communities, he founded Forge to give students what they were missing: a dev-first collective built on action, not talk.",
-      additionalContent: "The early days were small but scrappy. A few passionate students showed up each week to work on projects, prep for hackathons, or simply vibe and code. No gatekeeping, no fluff — just consistent, hands-on building.",
-      finalContent: "That foundation kicked off a movement: structured weekly work sessions, pods focused on shipping MVPs, and a network of mentors and alumni invested in student success."
+      content: "Back in Spring 2025, Amaan Sheikh noticed something missing at UB, a space for students who just wanted to build things outside of class. He started reaching out to founders, engineers, and leaders he admired for advice, and everyone seemed to agree: UB needed a community like this.",
+      additionalContent: "That idea became Forge. It started small: just a few messages, some calls, and a bunch of “yeah, this should exist” moments. Soon, a team came together, all excited to help make UB a place where future founders, devs, designers, and creatives could start building together.",
+      additionalContent2: "We hosted our first info session and our first ever pitch night that semester, it wasn't perfect, but it was packed, and filled with momentum. That summer, Amaan doubled down: connecting with alumni in Silicon Valley, getting advice from top schools' campus orgs, and building infrastructure with the team to launch strong in the fall.",
+      additionalContent3: "From a missing piece to a growing community, that’s how Forge began."
+
     },
     F25: {
       title: "F25", 
@@ -37,21 +39,15 @@ export default function About() {
       
       {/* Hero Section */}
       <section className="w-full py-16 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto animate-fade-up">
           {/* Banner Image */}
-          <div className="w-full h-64 md:h-80 bg-gray-200 rounded-lg mb-12 flex items-center justify-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100"></div>
-            <div className="relative z-10 text-center">
-              <div className="w-16 h-16 bg-[#005bbb] rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl font-bold">F</span>
-              </div>
-              <p className="text-gray-600 text-lg font-medium">Community Banner</p>
-              <p className="text-gray-500 text-sm mt-2">Students building together</p>
-            </div>
-            {/* Smoke effect placeholders */}
-            <div className="absolute top-1/4 left-1/4 w-8 h-8 bg-white/20 rounded-full blur-sm"></div>
-            <div className="absolute top-1/3 right-1/3 w-6 h-6 bg-white/30 rounded-full blur-sm"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-10 h-10 bg-white/15 rounded-full blur-sm"></div>
+          <div className="w-full h-64 md:h-80 rounded-lg mb-12 relative overflow-hidden">
+            <img 
+              src="/myImages/firstpitchnight1.png" 
+              alt="First Pitch Night at Forge"
+              className="w-full h-full object-cover object-center"
+              style={{ objectPosition: 'center 62%' }}
+            />
           </div>
           
           {/* Text Content */}
@@ -60,11 +56,14 @@ export default function About() {
               The dev collective for doers.
             </h1>
             <p className="text-xl md:text-2xl leading-relaxed mb-12">
-              Extraordinary things happen when people come together to make. Forge was created to bring that energy to the University at Buffalo — a space where devs, leaders, and founders build in public, push boundaries, and connect with other ambitious students.
+            Extraordinary things happen when ambitious people come together to build. Forge was created to bring that energy to the University at Buffalo. Throughout history, the greatest innovations have come from tight-knit, high-intensity teams united by a shared vision. At Forge, developers, designers, scientists, engineers, founders, and future leaders build in public, push boundaries, and find their people.
             </p>
-            <button className="border-2 border-[#005bbb] text-[#005bbb] bg-transparent px-4 py-2 rounded-lg hover:bg-[#005bbb] hover:text-white transition-colors font-medium text-sm">
+            <a 
+              href="/meet-the-team"
+              className="inline-block border-2 border-[#005bbb] text-[#005bbb] bg-transparent px-6 py-3 rounded-lg hover:bg-[#005bbb] hover:text-white transition-colors font-medium text-base"
+            >
               Meet our team
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -99,35 +98,35 @@ export default function About() {
           {/* Content Area */}
           <div className="transition-all duration-300">
             {activePeriod === 'S25' && (
-              <div>
+              <div key="S25" className="animate-fade-up">
                 <h3 className="font-serif text-3xl font-bold mb-4">{timelineData.S25.title}</h3>
                 <h4 className="text-xl font-semibold mb-8 text-gray-700">{timelineData.S25.subtitle}</h4>
                 
                 {/* Three Images Layout */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                  <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-[#005bbb] rounded-full flex items-center justify-center mx-auto mb-2">
-                        <span className="text-white text-lg font-bold">🏢</span>
-                      </div>
-                      <p className="text-gray-600 text-sm">First Meeting Space</p>
-                    </div>
+                  <div className="bg-gray-200 rounded-lg h-64 overflow-hidden">
+                    <img
+                      src="/myImages/pitchpicture.png"
+                      alt="First Meeting Space"
+                      className="w-full h-full object-cover object-center"
+                      style={{ objectPosition: 'center 50%' }}
+                    />
                   </div>
-                  <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-[#005bbb] rounded-full flex items-center justify-center mx-auto mb-2">
-                        <span className="text-white text-lg font-bold">👥</span>
-                      </div>
-                      <p className="text-gray-600 text-sm">Early Community</p>
-                    </div>
+                  <div className="bg-gray-200 rounded-lg h-64 overflow-hidden">
+                    <img
+                      src="/myImages/joinForge.jpg"
+                      alt="Early Community"
+                      className="w-full h-full object-cover object-center"
+                      style={{ objectPosition: 'center 50%', transform: 'scale(1)' }}
+                    />
                   </div>
-                  <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-[#005bbb] rounded-full flex items-center justify-center mx-auto mb-2">
-                        <span className="text-white text-lg font-bold">💻</span>
-                      </div>
-                      <p className="text-gray-600 text-sm">First Build Session</p>
-                    </div>
+                  <div className="bg-gray-200 rounded-lg h-64 overflow-hidden">
+                    <img
+                      src="/myImages/speaker2.jpg"
+                      alt="First Build Session"
+                      className="w-full h-full object-cover object-center"
+                      style={{ objectPosition: 'center 40%' }}
+                    />
                   </div>
                 </div>
 
@@ -135,13 +134,14 @@ export default function About() {
                 <div className="space-y-4 text-lg leading-relaxed">
                   <p>{timelineData.S25.content}</p>
                   <p>{timelineData.S25.additionalContent}</p>
-                  <p>{timelineData.S25.finalContent}</p>
+                  <p>{timelineData.S25.additionalContent2}</p>
+                  <p>{timelineData.S25.additionalContent3}</p>
                 </div>
               </div>
             )}
 
             {activePeriod === 'F25' && (
-              <div>
+              <div key="F25" className="animate-fade-up">
                 <h3 className="font-serif text-3xl font-bold mb-4">{timelineData.F25.title}</h3>
                 <h4 className="text-xl font-semibold mb-8 text-gray-700">{timelineData.F25.subtitle}</h4>
                 

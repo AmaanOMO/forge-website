@@ -1,22 +1,15 @@
 'use client'
 
 import React from 'react'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const ForWhom = () => {
-  const { elementRef: textRef, isVisible: textVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 })
-  const { elementRef: imageRef, isVisible: imageVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.3 })
-  const { elementRef: accentRef, isVisible: accentVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 })
 
   return (
     <section className="w-full bg-[#fdfcf8] py-24">
       <div className="max-w-6xl mx-auto px-8 flex flex-col md:flex-row items-center">
         {/* Left Column - Text Content */}
         <div 
-          ref={textRef}
-          className={`md:w-1/2 md:pr-12 mb-12 md:mb-0 transition-all duration-800 ${
-            textVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
-          }`}
+          className="md:w-1/2 md:pr-12 mb-12 md:mb-0"
         >
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 text-black">
             This isn't just a club, it's a
@@ -34,10 +27,7 @@ const ForWhom = () => {
         </div>
         {/* Right Column - Visual Content */}
         <div 
-          ref={imageRef}
-          className={`md:w-2/3 md:pl-12 opacity-0 transform translate-y-4 transition-all duration-700 relative group ${
-            imageVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
-          }`}
+          className="md:w-2/3 md:pl-12 relative group"
         >
           <img
             src="/myImages/thanksBuilding.jpeg"
@@ -48,10 +38,7 @@ const ForWhom = () => {
       </div>
       {/* Blue accent elements */}
       <div 
-        ref={accentRef}
-        className={`max-w-6xl mx-auto px-8 mt-12 transition-all duration-800 ${
-          accentVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
-        }`}
+        className="max-w-6xl mx-auto px-8 mt-12"
       >
         <div className="flex justify-center">
           <div className="h-1 w-24 bg-[#005bbb]"></div>

@@ -8,7 +8,7 @@ export default function Firesides() {
       
       {/* Hero Section */}
       <section className="w-full py-16 px-8 md:px-16">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center animate-fade-up">
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-8">
             Firesides
           </h1>
@@ -18,7 +18,7 @@ export default function Firesides() {
           </p>
           
           <a 
-            href="https://lu.ma/ubforge"
+            href="https://lu.ma/ubforge?k=c&period=past"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block border-2 border-[#005bbb] text-[#005bbb] bg-transparent px-6 py-3 rounded-lg hover:bg-[#005bbb] hover:text-white transition-colors font-medium"

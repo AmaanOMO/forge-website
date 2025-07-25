@@ -12,7 +12,7 @@ const Navbar = () => {
         <a href="/about" className="hover:text-[#005bbb] transition-colors">
           About
         </a>
-        <a href="https://lu.ma/ubforge?period=past" target="_blank" rel="noopener noreferrer" className="hover:text-[#005bbb] transition-colors">
+        <a href="https://lu.ma/ubforge?k=c&period=past" target="_blank" rel="noopener noreferrer" className="hover:text-[#005bbb] transition-colors">
           Events
         </a>
         <a href="#" className="hover:text-[#005bbb] transition-colors">

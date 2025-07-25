@@ -92,7 +92,7 @@ const Hero = () => {
         </div>
         <div
           ref={linksRef}
-          className="mt-16 space-y-6 opacity-0 transform translate-y-4 transition-all duration-700"
+          className="mt-8 space-y-6 opacity-0 transform translate-y-4 transition-all duration-700"
         >
           <a
             href="/sunsesh"
@@ -117,18 +117,23 @@ const Hero = () => {
         {/* New UB Section */}
         <div
           ref={ubSectionRef}
-          className="mt-16 opacity-0 transform translate-y-4 transition-all duration-700"
+          className="mt-8 opacity-0 transform translate-y-4 transition-all duration-700"
         >
           <h3 className="font-serif text-2xl md:text-3xl font-light text-black mb-4 text-left">
             Forge is the University at Buffalo's home for tomorrow's leaders.
           </h3>
           <p className="text-sm md:text-base text-gray-600 mb-8 text-left">
-            We host industry talks and weekly co-working sessions to work on your passion projects.
+          We gather builders weekly to learn, collaborate, build, and much more through our SunSesh and Fireside events.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-3 rounded-full border-2 border-[#005bbb] text-[#005bbb] font-medium hover:bg-[#005bbb] hover:text-white transition-colors duration-300">
+            <a 
+              href="https://lu.ma/ubforge?k=c&period=past"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 rounded-full border-2 border-[#005bbb] text-[#005bbb] font-medium hover:bg-[#005bbb] hover:text-white transition-colors duration-300"
+            >
               → See what's happening
-            </button>
+            </a>
             <button 
               onClick={scrollToAbout}
               className="px-8 py-3 rounded-full border-2 border-gray-300 text-gray-700 font-medium hover:border-gray-400 hover:text-gray-800 transition-colors duration-300"
@@ -144,47 +149,49 @@ const Hero = () => {
         onMouseEnter={() => setShowControls(true)}
         onMouseLeave={() => setShowControls(false)}
       >
-        <video
-          ref={videoRef}
-          className="w-full h-auto rounded-lg shadow-lg"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src="/addedVids/spurhacks.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div className="relative">
+          <video
+            ref={videoRef}
+            className="w-full h-auto rounded-lg shadow-lg"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src="/addedVids/spurhacks.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         
         {/* Video Controls Bar */}
         {showControls && (
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-4 rounded-b-lg transition-all duration-300" style={{ borderRadius: '0 0 8px 8px' }}>
-            <div className="flex justify-between items-center">
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent h-16 flex items-end transition-all duration-300 pointer-events-none">
+            <div className="w-full flex justify-between items-center p-4 pointer-events-auto">
               <button
                 onClick={toggleMute}
-                className="text-white hover:text-gray-300 transition-colors"
+                className="text-white hover:text-gray-300 transition-colors p-2 rounded hover:bg-white/10"
               >
                 {isMuted ? (
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.793L5.5 14H3a1 1 0 01-1-1V7a1 1 0 011-1h2.5l3.883-3.707a1 1 0 011.617.793zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 ) : (
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.793L5.5 14H3a1 1 0 01-1-1V7a1 1 0 011-1h2.5l3.883-3.707a1 1 0 011.617.793z" clipRule="evenodd" />
                   </svg>
                 )}
               </button>
               <button
                 onClick={toggleFullscreen}
-                className="text-white hover:text-gray-300 transition-colors"
+                className="text-white hover:text-gray-300 transition-colors p-2 rounded hover:bg-white/10"
               >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 11-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z" clipRule="evenodd" />
                 </svg>
               </button>
             </div>
           </div>
         )}
+        </div>
       </div>
     </div>
   )
