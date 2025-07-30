@@ -1,4 +1,4 @@
-# UB Forge 🌐 
+# UB Forge Website 
 
 The official website for [UB Forge](https://ubforge.com) — the student builder community at the University at Buffalo.
 
@@ -9,14 +9,14 @@ We host weekly co-working sessions, industry speaker events, startup fairs, and 
 
 Whether you're shipping your first MVP, meeting like-minded founders, or just curious about tech — Forge is your home.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Frontend**: Next.js + React
 - **Styling**: Tailwind CSS
 - **Deployment**: Vercel
 - **Forms/DB**: (Coming soon) Supabase
 
-## 🧠 Features
+## Features
 
 - 🔥 Hero landing page
 - 📅 Events section (SunSesh, Firesides, Startup Fair)
