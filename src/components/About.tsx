@@ -17,7 +17,7 @@ const About = () => {
           <div className="h-1 w-16 bg-[#005bbb]"></div>
         </div>
         <p className="text-lg md:text-xl leading-relaxed mb-8">
-                      Whether it's your first project or the next billion-dollar idea, Forge is where it starts.
+                      Whether it's your first project or the next billion-dollar idea, Forge is a community where ideas turn into action and builders grow into leaders.
           Tap into a network of UB alumni in Silicon Valley, startup founders, and engineers from top tech companies.
           <br className="hidden md:block" />
           <br className="hidden md:block" />

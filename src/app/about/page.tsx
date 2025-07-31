@@ -47,7 +47,7 @@ export default function About() {
           {/* Banner Image */}
           <div className="w-full h-64 md:h-80 rounded-lg mb-12 relative overflow-hidden">
             <Image 
-              src="/myImages/firstpitchnight1.png" 
+              src="/myImages/firstpitchnight1.jpg" 
               alt="First Pitch Night at Forge"
               fill
               className="object-cover object-center"
@@ -111,11 +111,11 @@ export default function About() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                   <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative">
                     <Image
-                      src="/myImages/pitchpicture.png"
+                      src="/myImages/pitchpicture.jpg"
                       alt="First Meeting Space"
                       fill
                       className="object-cover object-center"
-                      style={{ objectPosition: 'center 50%' }}
+                      style={{ objectPosition: 'center 80%' }}
                     />
                   </div>
                   <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative">
