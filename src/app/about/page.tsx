@@ -115,7 +115,7 @@ export default function About() {
                       alt="First Meeting Space"
                       fill
                       className="object-cover object-center"
-                      style={{ objectPosition: 'center 80%' }}
+                      style={{ objectPosition: 'center 75%' }}
                     />
                   </div>
                   <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative">
