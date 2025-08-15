@@ -99,7 +99,7 @@ const Navbar = () => {
       </div>
 
       {/* Logo - Desktop and Mobile */}
-      <div className="w-16 h-16 flex items-center justify-center">
+      <div className="w-20 h-20 flex items-center justify-center">
         <Image 
           src="/myImages/forgeLogo.png" 
           alt="Forge Logo" 
