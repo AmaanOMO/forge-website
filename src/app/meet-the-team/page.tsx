@@ -58,7 +58,7 @@ export default function MeetTheTeam() {
     { 
       name: 'Tahmina Fayezi', 
       title: 'Director of Partnership',
-      image: '/Headshots/tahminaFayezi.png',
+      image: '/Headshots/TahminaFayezi.png',
       linkedin: 'https://www.linkedin.com/in/tahmina-fayezi/',
       objectPosition: 'center 50%'
     },
