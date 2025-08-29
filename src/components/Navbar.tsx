@@ -121,7 +121,7 @@ const Navbar = () => {
               About
             </Link>
             <a 
-              href="https://lu.ma/ubforge?k=c&period=past" 
+              href="https://luma.com/ubforge?k=c" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="block py-2 hover:text-[#005bbb] transition-colors"
