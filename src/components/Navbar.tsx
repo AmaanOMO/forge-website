@@ -52,7 +52,7 @@ const Navbar = () => {
         <Link href="/about" className="hover:text-[#005bbb] transition-colors">
           About
         </Link>
-        <a href="https://lu.ma/ubforge?k=c&period=past" target="_blank" rel="noopener noreferrer" className="hover:text-[#005bbb] transition-colors">
+        <a href="https://luma.com/ubforge?k=c" target="_blank" rel="noopener noreferrer" className="hover:text-[#005bbb] transition-colors">
           Events
         </a>
         <Link href="/projects" className="hover:text-[#005bbb] transition-colors">
