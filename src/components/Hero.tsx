@@ -192,7 +192,7 @@ const Hero = () => {
             preload="auto"
             style={{ minHeight: '400px' }}
           >
-            <source src="/addedVids/spurhacks.mp4" type="video/mp4" />
+            <source src="/addedVids/spurhacks.mov" type="video/quicktime" />
             Your browser does not support the video tag.
           </video>
         </div>
