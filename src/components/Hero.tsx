@@ -7,8 +7,8 @@ const Hero = () => {
   const headingRef = useRef<HTMLDivElement>(null)
   const subheadingRef = useRef<HTMLDivElement>(null)
   const linksRef = useRef<HTMLDivElement>(null)
-  const videoContainerRef = useRef<HTMLDivElement>(null)
-  const videoRef = useRef<HTMLVideoElement>(null)
+  // const videoContainerRef = useRef<HTMLDivElement>(null)
+  // const videoRef = useRef<HTMLVideoElement>(null)
   const ubSectionRef = useRef<HTMLDivElement>(null)
   
 
@@ -18,10 +18,10 @@ const Hero = () => {
     const heading = headingRef.current
     const subheading = subheadingRef.current
     const links = linksRef.current
-    const videoContainer = videoContainerRef.current
+    // const videoContainer = videoContainerRef.current
     const ubSection = ubSectionRef.current
     
-    if (heading && subheading && links && videoContainer && ubSection) {
+    if (heading && subheading && links && ubSection) {
       setTimeout(() => {
         heading.style.opacity = '1'
         heading.style.transform = 'translateY(0)'
@@ -34,10 +34,10 @@ const Hero = () => {
         links.style.opacity = '1'
         links.style.transform = 'translateY(0)'
       }, 900)
-      setTimeout(() => {
-        videoContainer.style.opacity = '1'
-        videoContainer.style.transform = 'translateY(0)'
-      }, 1200)
+      // setTimeout(() => {
+      //   videoContainer.style.opacity = '1'
+      //   videoContainer.style.transform = 'translateY(0)'
+      // }, 1200)
       setTimeout(() => {
         ubSection.style.opacity = '1'
         ubSection.style.transform = 'translateY(0)'
@@ -45,7 +45,7 @@ const Hero = () => {
     }
   }, [])
 
-  // Force video to play when component mounts
+  {/* Force video to play when component mounts
   useEffect(() => {
     const video = videoRef.current
     if (video) {
@@ -176,6 +176,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      {/* Video section commented out for now
       <div
         ref={videoContainerRef}
         className="md:w-2/3 md:pl-12 opacity-0 transform translate-y-4 transition-all duration-700 relative group"
@@ -197,6 +198,7 @@ const Hero = () => {
           </video>
         </div>
       </div>
+      */}
     </div>
   )
 }
