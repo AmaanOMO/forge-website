@@ -121,10 +121,7 @@ const Hero = () => {
       
       {/* Video section removed - text only for now */}
       <div className="md:w-2/3 md:pl-12 flex items-center justify-center">
-        <div className="text-center text-gray-500">
-          <p className="text-lg font-medium">Video section removed</p>
-          <p className="text-sm">Text-only version for now</p>
-        </div>
+        
       </div>
     </div>
   )
