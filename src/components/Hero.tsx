@@ -47,6 +47,53 @@ const Hero = () => {
     }
   }, [])
 
+  // Force video to play when component mounts
+  useEffect(() => {
+    const video = videoRef.current
+    if (video) {
+      console.log('Video element found:', video)
+      console.log('Video dimensions:', video.offsetWidth, 'x', video.offsetHeight)
+      console.log('Video src:', video.currentSrc)
+      
+      // Force set the video source to ensure it's correct
+      const videoElement = video as HTMLVideoElement
+      
+      // Handle local vs production environments
+      const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      
+      if (isLocalhost) {
+        // Local development - use local file
+        videoElement.src = `${window.location.origin}/addedVids/spurhacksmov.mp4`
+        console.log('Local development - using local video file')
+      } else {
+        // Production - use a hosted video URL or fallback
+        videoElement.src = 'https://your-video-hosting-url.com/spurhacksmov.mp4'
+        console.log('Production - using hosted video URL')
+      }
+      
+      console.log('Video src set to:', videoElement.src)
+      
+      // Try to play the video
+      const playPromise = video.play()
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            console.log('Video autoplay successful')
+            const fallback = document.getElementById('video-fallback')
+            if (fallback) fallback.style.display = 'none'
+          })
+          .catch((error) => {
+            console.log('Video autoplay failed:', error)
+            // Show fallback if autoplay fails
+            const fallback = document.getElementById('video-fallback')
+            if (fallback) fallback.style.display = 'flex'
+          })
+      }
+    } else {
+      console.log('Video element not found')
+    }
+  }, [])
+
   const scrollToAbout = () => {
     const aboutSection = document.querySelector('#about-section')
     if (aboutSection) {
@@ -130,7 +177,7 @@ const Hero = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a 
-              href="https://lu.ma/ubforge?k=c&period=past"
+              href="https://luma.com/ubforge?k=c"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-8 py-3 rounded-full border-2 border-[#005bbb] text-[#005bbb] font-medium hover:bg-[#005bbb] hover:text-white transition-colors duration-300"
@@ -149,51 +196,56 @@ const Hero = () => {
       <div
         ref={videoContainerRef}
         className="md:w-2/3 md:pl-12 opacity-0 transform translate-y-4 transition-all duration-700 relative group"
-        onMouseEnter={() => setShowControls(true)}
-        onMouseLeave={() => setShowControls(false)}
+
       >
-        <div className="relative">
+        <div className="relative bg-gray-100 rounded-lg shadow-lg overflow-hidden">
           <video
             ref={videoRef}
-            className="w-full h-auto rounded-lg shadow-lg"
+            className="w-full h-auto rounded-lg shadow-lg bg-black block"
             autoPlay
             muted
             loop
             playsInline
+            preload="auto"
+            style={{ minHeight: '400px' }}
+
+
           >
             <source src="/addedVids/spurhacks.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        
-        {/* Video Controls Bar - appears on hover */}
-        {showControls && (
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent h-16 flex items-end transition-all duration-300 pointer-events-none">
-            <div className="w-full flex justify-between items-center p-4 pointer-events-auto">
-              <button
-                onClick={toggleMute}
-                className="text-white hover:text-gray-300 transition-colors p-2 rounded hover:bg-white/10"
-              >
-                {isMuted ? (
+          
+
+          
+          {/* Video Controls Bar - appears on hover */}
+          {showControls && (
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent h-16 flex items-end transition-all duration-300 pointer-events-none">
+              <div className="w-full flex justify-between items-center p-4 pointer-events-auto">
+                <button
+                  onClick={toggleMute}
+                  className="text-white hover:text-gray-300 transition-colors p-2 rounded hover:bg-white/10"
+                >
+                  {isMuted ? (
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.793L5.5 14H3a1 1 0 01-1-1V7a1 1 0 011-1h2.5l3.883-3.707a1 1 0 011.617.793zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  ) : (
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.793L5.5 14H3a1 1 0 01-1-1V7a1 1 0 011-1h2.5l3.883-3.707a1 1 0 011.617.793zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  )}
+                </button>
+                <button
+                  onClick={toggleFullscreen}
+                  className="text-white hover:text-gray-300 transition-colors p-2 rounded hover:bg-white/10"
+                >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.793L5.5 14H3a1 1 0 01-1-1V7a1 1 0 011-1h2.5l3.883-3.707a1 1 0 011.617.793zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    <path fillRule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 11-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293-2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z" clipRule="evenodd" />
                   </svg>
-                ) : (
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.793L5.5 14H3a1 1 0 01-1-1V7a1 1 0 011-1h2.5l3.883-3.707a1 1 0 011.617.793z" clipRule="evenodd" />
-                  </svg>
-                )}
-              </button>
-              <button
-                onClick={toggleFullscreen}
-                className="text-white hover:text-gray-300 transition-colors p-2 rounded hover:bg-white/10"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 11-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z" clipRule="evenodd" />
-                </svg>
-              </button>
+                </button>
+              </div>
             </div>
-          </div>
-        )}
+          )}
         </div>
       </div>
     </div>
