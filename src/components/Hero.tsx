@@ -12,7 +12,6 @@ const Hero = () => {
   const ubSectionRef = useRef<HTMLDivElement>(null)
   
   // Video control states
-  const [showControls, setShowControls] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
 
   useEffect(() => {
@@ -217,8 +216,7 @@ const Hero = () => {
           
 
           
-          {/* Video Controls Bar - appears on hover */}
-          {showControls && (
+
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent h-16 flex items-end transition-all duration-300 pointer-events-none">
               <div className="w-full flex justify-between items-center p-4 pointer-events-auto">
                 <button
