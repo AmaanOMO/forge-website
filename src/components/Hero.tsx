@@ -7,18 +7,13 @@ const Hero = () => {
   const headingRef = useRef<HTMLDivElement>(null)
   const subheadingRef = useRef<HTMLDivElement>(null)
   const linksRef = useRef<HTMLDivElement>(null)
-  // const videoContainerRef = useRef<HTMLDivElement>(null)
-  // const videoRef = useRef<HTMLVideoElement>(null)
   const ubSectionRef = useRef<HTMLDivElement>(null)
-  
-
 
   useEffect(() => {
     // Staggered fade-in animation sequence
     const heading = headingRef.current
     const subheading = subheadingRef.current
     const links = linksRef.current
-    // const videoContainer = videoContainerRef.current
     const ubSection = ubSectionRef.current
     
     if (heading && subheading && links && ubSection) {
@@ -34,61 +29,10 @@ const Hero = () => {
         links.style.opacity = '1'
         links.style.transform = 'translateY(0)'
       }, 900)
-      // setTimeout(() => {
-      //   videoContainer.style.opacity = '1'
-      //   videoContainer.style.transform = 'translateY(0)'
-      // }, 1200)
       setTimeout(() => {
         ubSection.style.opacity = '1'
         ubSection.style.transform = 'translateY(0)'
-      }, 1500)
-    }
-  }, [])
-
-  {/* Force video to play when component mounts
-  useEffect(() => {
-    const video = videoRef.current
-    if (video) {
-      console.log('Video element found:', video)
-      console.log('Video dimensions:', video.offsetWidth, 'x', video.offsetHeight)
-      console.log('Video src:', video.currentSrc)
-      
-      // Force set the video source to ensure it's correct
-      const videoElement = video as HTMLVideoElement
-      
-      // Handle local vs production environments
-      const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-      
-      if (isLocalhost) {
-        // Local development - use local file
-        videoElement.src = `${window.location.origin}/addedVids/spurhacksmov.mp4`
-        console.log('Local development - using local video file')
-      } else {
-        // Production - use a hosted video URL or fallback
-        videoElement.src = 'https://your-video-hosting-url.com/spurhacksmov.mp4'
-        console.log('Production - using hosted video URL')
-      }
-      
-      console.log('Video src set to:', videoElement.src)
-      
-      // Try to play the video
-      const playPromise = video.play()
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            console.log('Video autoplay successful')
-            const fallback = document.getElementById('video-fallback')
-            if (fallback) fallback.style.display = 'none'
-          })
-          .catch((error) => {
-            console.log('Video autoplay failed:', error)
-            // Show fallback if autoplay fails
-            const fallback = document.getElementById('video-fallback')
-            if (fallback) fallback.style.display = 'flex'
-          })
-      }
-    } else {
-      console.log('Video element not found')
+      }, 1200)
     }
   }, [])
 
@@ -106,8 +50,6 @@ const Hero = () => {
     }
   }
 
-
-
   return (
     <div className="w-full px-8 md:px-16 pt-16 pb-24 flex flex-col md:flex-row">
       <div className="md:w-1/3 mb-12 md:mb-0">
@@ -121,7 +63,7 @@ const Hero = () => {
           ref={subheadingRef}
           className="font-serif italic text-5xl md:text-6xl lg:text-7xl mt-2 opacity-0 transform translate-y-4 transition-all duration-700"
         >
-                      what's next
+          what's next
         </div>
         <div
           ref={linksRef}
@@ -156,7 +98,7 @@ const Hero = () => {
             Forge is the University at Buffalo's home for tomorrow's leaders.
           </h3>
           <p className="text-sm md:text-base text-gray-600 mb-8 text-left">
-          We gather builders weekly to learn, collaborate, build, and much more through our SunSesh and Fireside events.
+            We gather builders weekly to learn, collaborate, build, and much more through our SunSesh and Fireside events.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a 
@@ -176,29 +118,14 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      {/* Video section commented out for now
-      <div
-        ref={videoContainerRef}
-        className="md:w-2/3 md:pl-12 opacity-0 transform translate-y-4 transition-all duration-700 relative group"
-
-      >
-        <div className="relative bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-          <video
-            ref={videoRef}
-            className="w-full h-auto rounded-lg shadow-lg bg-black block"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            style={{ minHeight: '400px' }}
-          >
-            <source src="/addedVids/spurhacks.mov" type="video/quicktime" />
-            Your browser does not support the video tag.
-          </video>
+      
+      {/* Video section removed - text only for now */}
+      <div className="md:w-2/3 md:pl-12 flex items-center justify-center">
+        <div className="text-center text-gray-500">
+          <p className="text-lg font-medium">Video section removed</p>
+          <p className="text-sm">Text-only version for now</p>
         </div>
       </div>
-      */}
     </div>
   )
 }
