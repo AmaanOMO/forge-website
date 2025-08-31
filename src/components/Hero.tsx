@@ -55,19 +55,19 @@ const Hero = () => {
       <div className="md:w-1/3 mb-12 md:mb-0">
         <div
           ref={headingRef}
-          className="font-serif font-bold text-6xl md:text-7xl lg:text-8xl opacity-0 transform translate-y-4 transition-all duration-700"
+          className="font-serif font-bold text-6xl md:text-7xl lg:text-8xl opacity-0 transform translate-y-4 transition-all duration-700 text-center"
         >
           Creating
         </div>
         <div
           ref={subheadingRef}
-          className="font-serif italic text-5xl md:text-6xl lg:text-7xl mt-2 opacity-0 transform translate-y-4 transition-all duration-700"
+          className="font-serif italic text-5xl md:text-6xl lg:text-7xl mt-2 opacity-0 transform translate-y-4 transition-all duration-700 text-center"
         >
           what's next
         </div>
         <div
           ref={linksRef}
-          className="mt-8 space-y-6 opacity-0 transform translate-y-4 transition-all duration-700"
+          className="mt-8 space-y-6 opacity-0 transform translate-y-4 transition-all duration-700 text-center"
         >
           <a
             href="/sunsesh"
@@ -92,15 +92,15 @@ const Hero = () => {
         {/* New UB Section */}
         <div
           ref={ubSectionRef}
-          className="mt-8 opacity-0 transform translate-y-4 transition-all duration-700"
+          className="mt-8 opacity-0 transform translate-y-4 transition-all duration-700 text-center"
         >
-          <h3 className="font-serif text-2xl md:text-3xl font-light text-black mb-4 text-left">
+          <h3 className="font-serif text-2xl md:text-3xl font-light text-black mb-4">
             Forge is the University at Buffalo's home for tomorrow's leaders.
           </h3>
-          <p className="text-sm md:text-base text-gray-600 mb-8 text-left">
+          <p className="text-sm md:text-base text-gray-600 mb-8">
             We gather builders weekly to learn, collaborate, build, and much more through our SunSesh and Fireside events.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="https://luma.com/ubforge?k=c"
               target="_blank"
