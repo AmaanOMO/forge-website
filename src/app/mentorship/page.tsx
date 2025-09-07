@@ -33,17 +33,17 @@ export default function Mentorship() {
         </div>
       </section>
 
-      {/* Meet Our First Mentor Section */}
+      {/* Meet Our Mentors Section */}
       <section className="w-full py-16 px-8 md:px-16 bg-[#fdfcf8]">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-12 text-center text-black">
             Meet Our Mentors
           </h2>
           
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            {/* Mentor Photo */}
-            <div className="lg:w-1/3 flex justify-center">
-              <div className="group relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Joseph Chen */}
+            <div className="flex flex-col items-center text-center">
+              <div className="group relative mb-6">
                 <div className="relative w-64 h-64 rounded-full overflow-hidden bg-gray-200">
                   <img
                     src="/Headshots/JosephChen_optimized.png"
@@ -71,10 +71,7 @@ export default function Mentorship() {
                   </div>
                 </div>
               </div>
-            </div>
-            
-            {/* Mentor Info */}
-            <div className="lg:w-2/3">
+              
               <h3 className="font-serif text-2xl md:text-3xl font-bold mb-4 text-black">
                 Joseph Chen
               </h3>
@@ -86,6 +83,50 @@ export default function Mentorship() {
                 with over 50,000 downloads. Joe will host office hours 
                 and 1-on-1 sessions to guide UB students on building projects and navigating 
                 career paths.
+              </p>
+            </div>
+
+            {/* Zaid Arshad */}
+            <div className="flex flex-col items-center text-center">
+              <div className="group relative mb-6">
+                <div className="relative w-64 h-64 rounded-full overflow-hidden bg-gray-200">
+                  <img
+                    src="/myImages/ZaidArshad.png"
+                    alt="Zaid Arshad"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    style={{ objectPosition: 'center 30%' }}
+                  />
+                  
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/60 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="flex space-x-3">
+                      {/* LinkedIn Icon */}
+                      <a 
+                        href="https://www.linkedin.com/in/zaid-arsh/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                        aria-label="LinkedIn"
+                      >
+                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <h3 className="font-serif text-2xl md:text-3xl font-bold mb-4 text-black">
+                Zaid Arshad
+              </h3>
+              <p className="text-lg text-[#005bbb] font-medium mb-6">
+              SWE Intern at Notion & Founder of Yoki Labs
+              </p>
+              <p className="text-lg leading-relaxed text-gray-700">
+                Zaid Arshad is a current SWE intern at Notion and founder of Yoki Labs. 
+                With 200k+ users on his projects, Zaid brings a passion for building impactful software 
+                and sharing his journey from starting at 12 to now mentoring the next generation of developers.
               </p>
             </div>
           </div>
@@ -123,7 +164,7 @@ export default function Mentorship() {
               <h3 className="font-serif text-xl font-bold mb-4 text-black">2. Review</h3>
               <p className="text-gray-700">
                 Selected mentor reviews your application
-              </p>
+              </p> 
             </div>
             
             {/* Step 3 */}
