@@ -122,7 +122,7 @@ export default function Mentorship() {
               </div>
               <h3 className="font-serif text-xl font-bold mb-4 text-black">2. Review</h3>
               <p className="text-gray-700">
-                Forge team reviews your application
+                Selected mentor reviews your application
               </p>
             </div>
             

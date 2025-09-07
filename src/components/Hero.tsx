@@ -129,6 +129,7 @@ const Hero = () => {
             loop
             playsInline
             className="w-full h-auto rounded-lg shadow-lg"
+            controls
             controlsList="nodownload nofullscreen noremoteplayback"
             disablePictureInPicture
             onContextMenu={(e) => e.preventDefault()}
