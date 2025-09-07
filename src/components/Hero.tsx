@@ -1,3 +1,4 @@
+
 'use client'
 
 import React, { useEffect, useRef } from 'react'
@@ -129,7 +130,7 @@ const Hero = () => {
             playsInline
             className="w-full h-auto rounded-lg shadow-lg"
             controls
-            controlsList="nodownload nofullscreen noremoteplayback nofullscreenbutton"
+            controlsList="nodownload nofullscreen noremoteplayback"
             disablePictureInPicture
             onContextMenu={(e) => e.preventDefault()}
           >
