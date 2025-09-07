@@ -90,6 +90,9 @@ const Navbar = () => {
               <Link href="/atlas" className="block px-4 py-2 hover:bg-gray-100">
                 Atlas
               </Link>
+              <Link href="/mentorship" className="block px-4 py-2 hover:bg-gray-100">
+                Mentorship
+              </Link>
             </div>
           )}
         </div>
@@ -188,6 +191,13 @@ const Navbar = () => {
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Atlas
+                  </Link>
+                  <Link 
+                    href="/mentorship" 
+                    className="block py-2 hover:text-[#005bbb] transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Mentorship
                   </Link>
                 </div>
               )}
