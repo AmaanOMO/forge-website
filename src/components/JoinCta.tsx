@@ -73,7 +73,7 @@ const JoinCta = () => {
         </p>
         <div className="flex justify-center">
           <a
-            href="https://lu.ma/ubforge?k=c&period=past"
+            href="https://luma.com/ubforge?k=c"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#005bbb] underline hover:text-[#004a99] transition-colors text-xl font-medium"

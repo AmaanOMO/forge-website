@@ -28,7 +28,7 @@ export default function StartupFair() {
           </div>
           
           <a 
-            href="https://lu.ma/ubforge?k=c&period=past"
+            href="https://luma.com/ubforge?k=c"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block border-2 border-[#005bbb] text-[#005bbb] bg-transparent px-6 py-3 rounded-lg hover:bg-[#005bbb] hover:text-white transition-colors font-medium"

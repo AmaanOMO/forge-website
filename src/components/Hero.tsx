@@ -119,9 +119,26 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Video section removed - text only for now */}
+      {/* Video section */}
       <div className="md:w-2/3 md:pl-12 flex items-center justify-center">
-        
+        <div className="w-full max-w-4xl">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-auto rounded-lg shadow-lg"
+            controls
+            style={{ 
+              controlsList: 'nodownload nofullscreen noremoteplayback nofullscreenbutton',
+              disablePictureInPicture: true 
+            }}
+            onContextMenu={(e) => e.preventDefault()}
+          >
+            <source src="/addedVids/spurhacks.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
   )
