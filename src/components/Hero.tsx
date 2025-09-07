@@ -129,10 +129,8 @@ const Hero = () => {
             playsInline
             className="w-full h-auto rounded-lg shadow-lg"
             controls
-            style={{ 
-              controlsList: 'nodownload nofullscreen noremoteplayback nofullscreenbutton',
-              disablePictureInPicture: true 
-            }}
+            controlsList="nodownload nofullscreen noremoteplayback nofullscreenbutton"
+            disablePictureInPicture
             onContextMenu={(e) => e.preventDefault()}
           >
             <source src="/addedVids/spurhacks.mp4" type="video/mp4" />
