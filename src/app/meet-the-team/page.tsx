@@ -42,11 +42,11 @@ export default function MeetTheTeam() {
       objectPosition: 'center 30%'
     },
     { 
-      name: 'Tashfia Tasnim', 
+      name: 'Leya Skaria', 
       title: 'Director of Marketing',
-      image: '/Headshots/Tashfia.png',
+      image: '/Headshots/LeyaSkaria.png',
       linkedin: 'https://www.linkedin.com/in/tashfiatasnim/',
-      objectPosition: 'center 50%'
+      objectPosition: 'center 10%'
     },
     { 
       name: 'Charlotte Lee', 
