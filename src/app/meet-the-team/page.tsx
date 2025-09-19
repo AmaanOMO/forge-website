@@ -45,8 +45,8 @@ export default function MeetTheTeam() {
       name: 'Leya Skaria', 
       title: 'Director of Marketing',
       image: '/Headshots/LeyaSkaria.png',
-      linkedin: 'https://www.linkedin.com/in/tashfiatasnim/',
-      objectPosition: 'center 10%'
+      linkedin: 'https://www.linkedin.com/in/leyaskaria/',
+      objectPosition: 'center 80%'
     },
     { 
       name: 'Charlotte Lee', 
