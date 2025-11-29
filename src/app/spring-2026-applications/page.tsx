@@ -14,7 +14,7 @@ export default function Spring2026Applications() {
 
   const positions = [
     {
-      title: 'Marketing Lead',
+      title: 'Director of Marketing',
       description: 'Responsible for managing Forge\'s public presence.',
       responsibilities: [
         'Run and schedule content on social platforms',
@@ -23,7 +23,7 @@ export default function Spring2026Applications() {
       ]
     },
     {
-      title: 'Events & Programming Lead',
+      title: 'Director of Events & Programming',
       description: 'Runs planning + logistics for Forge events.',
       responsibilities: [
         'Organize weekly SunSesh events & guest speakers',
@@ -32,7 +32,7 @@ export default function Spring2026Applications() {
       ]
     },
     {
-      title: 'Partnerships Lead',
+      title: 'Director of Partnerships',
       description: 'Forging relationships with companies, startups, and brands.',
       responsibilities: [
         'Reach out to companies for speakers & partnerships',
@@ -41,7 +41,7 @@ export default function Spring2026Applications() {
       ]
     },
     {
-      title: 'Finance Lead',
+      title: 'Director of Finance',
       description: 'Responsible for all money, purchases, and budgeting.',
       responsibilities: [
         'Track Forge\'s budget + expenses',
@@ -50,7 +50,7 @@ export default function Spring2026Applications() {
       ]
     },
     {
-      title: 'Growth & Community Lead',
+      title: 'Director of Growth & Community',
       description: 'Builds community vibes and engagement.',
       responsibilities: [
         'Plan fun social events (apple picking, ice skating, potlucks)',
