@@ -21,3 +21,31 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes blueColorShift {
+  0% {
+    color: #005bbb;
+  }
+  25% {
+    color: #00aaff;
+  }
+  50% {
+    color: #003366;
+  }
+  75% {
+    color: #0088ff;
+  }
+  100% {
+    color: #005bbb;
+  }
+}
+
+.animated-blue-text {
+  animation: blueColorShift 2.5s ease-in-out infinite;
+  transition: opacity 0.3s;
+  font-weight: 600;
+}
+
+.animated-blue-text:hover {
+  opacity: 0.8;
+}

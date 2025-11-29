@@ -52,7 +52,7 @@ const Navbar = () => {
         <Link href="/about" className="hover:text-[#005bbb] transition-colors">
           About
         </Link>
-        <a href="https://luma.com/ubforge?k=c" target="_blank" rel="noopener noreferrer" className="hover:text-[#005bbb] transition-colors">
+        <a href="https://luma.com/calendar/manage/cal-zJkt69wozQWZhcK?period=past" target="_blank" rel="noopener noreferrer" className="hover:text-[#005bbb] transition-colors">
           Events
         </a>
         <Link href="/projects" className="hover:text-[#005bbb] transition-colors">
@@ -99,6 +99,9 @@ const Navbar = () => {
         <Link href="/startup-fair" className="hover:text-[#005bbb] transition-colors">
           Startup Fair
         </Link>
+        <Link href="/spring-2026-applications" className="animated-blue-text">
+          Directors 2026
+        </Link>
       </div>
 
       {/* Logo - Desktop and Mobile */}
@@ -124,7 +127,7 @@ const Navbar = () => {
               About
             </Link>
             <a 
-              href="https://luma.com/ubforge?k=c" 
+              href="https://luma.com/calendar/manage/cal-zJkt69wozQWZhcK?period=past" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="block py-2 hover:text-[#005bbb] transition-colors"
@@ -145,6 +148,13 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               Startup Fair
+            </Link>
+            <Link 
+              href="/spring-2026-applications" 
+              className="block py-2 animated-blue-text"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Directors 2026
             </Link>
             
             {/* Mobile Culture Dropdown */}
