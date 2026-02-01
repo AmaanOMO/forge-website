@@ -80,7 +80,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Get Involved</h4>
             <a 
-              href="https://luma.com/calendar/manage/cal-zJkt69wozQWZhcK"
+              href="https://luma.com/calendar/cal-zJkt69wozQWZhcK?period=past"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#005bbb] text-white px-6 py-3 rounded-lg hover:bg-[#004499] transition-colors font-medium"

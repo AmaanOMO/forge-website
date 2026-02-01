@@ -103,7 +103,7 @@ const Hero = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a 
-              href="https://luma.com/calendar/manage/cal-zJkt69wozQWZhcK"
+              href="https://luma.com/calendar/cal-zJkt69wozQWZhcK?period=past"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-8 py-3 rounded-full border-2 border-[#005bbb] text-[#005bbb] font-medium hover:bg-[#005bbb] hover:text-white transition-colors duration-300"

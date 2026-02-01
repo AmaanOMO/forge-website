@@ -73,7 +73,7 @@ const JoinCta = () => {
         </p>
         <div className="flex justify-center">
           <a
-            href="https://luma.com/calendar/manage/cal-zJkt69wozQWZhcK"
+            href="https://luma.com/calendar/cal-zJkt69wozQWZhcK?period=past"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#005bbb] underline hover:text-[#004a99] transition-colors text-xl font-medium"

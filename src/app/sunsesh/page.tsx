@@ -18,7 +18,7 @@ export default function SunSesh() {
           </p>
           
           <a 
-            href="https://luma.com/calendar/manage/cal-zJkt69wozQWZhcK"
+            href="https://luma.com/calendar/cal-zJkt69wozQWZhcK?period=past"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block border-2 border-[#005bbb] text-[#005bbb] bg-transparent px-6 py-3 rounded-lg hover:bg-[#005bbb] hover:text-white transition-colors font-medium"

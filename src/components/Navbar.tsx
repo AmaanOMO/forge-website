@@ -52,7 +52,7 @@ const Navbar = () => {
         <Link href="/about" className="hover:text-[#005bbb] transition-colors">
           About
         </Link>
-        <a href="https://luma.com/calendar/manage/cal-zJkt69wozQWZhcK" target="_blank" rel="noopener noreferrer" className="hover:text-[#005bbb] transition-colors">
+        <a href="https://luma.com/calendar/cal-zJkt69wozQWZhcK?period=past" target="_blank" rel="noopener noreferrer" className="hover:text-[#005bbb] transition-colors">
           Events
         </a>
         <Link href="/projects" className="hover:text-[#005bbb] transition-colors">
@@ -124,7 +124,7 @@ const Navbar = () => {
               About
             </Link>
             <a 
-              href="https://luma.com/calendar/manage/cal-zJkt69wozQWZhcK" 
+              href="https://luma.com/calendar/cal-zJkt69wozQWZhcK?period=past" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="block py-2 hover:text-[#005bbb] transition-colors"
