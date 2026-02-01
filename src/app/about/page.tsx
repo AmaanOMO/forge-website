@@ -21,9 +21,19 @@ export default function About() {
 
     },
     F25: {
-      title: "F25", 
+      title: "F25",
       subtitle: "Our first full term. The real build begins.",
-      content: "We're expanding in Fall 2025 with so much more: internal systems for mentorship and logistics, sunday build sessions, fireside talks and our first large-scale events. We're building the club we always wanted to be part of — and you're invited."
+      content: "This semester marked a turning point for the club as momentum truly took hold.",
+      additionalContent: "What began as a space for curious builders quickly evolved into a community centered around growth, collaboration, and ambition.",
+      additionalContent2: "Throughout the term, members connected with alumni and engineers from companies like Amazon, Google, Microsoft, Walmart, Notion, and Vercel, gaining firsthand insight into what it means to build and thrive in the tech industry. Resume reviews and mentorship sessions helped turn those conversations into action, giving members clarity and confidence in their next steps.",
+      additionalContent3: "As the weeks went on, the energy extended far beyond meetings.",
+      additionalContent4: "Members regularly pitched ideas, shared progress updates, and supported one another as projects moved from concept to execution. Many went on to attend major hackathons such as CalHacks, HackHarvard, and MHacks, with one team earning a track win at UB Hacking. Outside of tech, community events like apple picking helped strengthen connections and foster a sense of belonging.",
+      additionalContent5: "By the end of the semester, the club had grown into a launchpad, a place where ideas were explored, confidence was built, and members left more motivated and equipped to pursue what came next."
+    },
+    S26: {
+      title: "S26",
+      subtitle: "Coming soon",
+      content: "Our 2nd term of Forge. Coming soon!"
     }
   }
 
@@ -31,7 +41,7 @@ export default function About() {
   const periods = [
     { id: 'S25', label: 'S25', active: true },
     { id: 'F25', label: 'F25', active: true },
-    { id: 'S26', label: 'S26', active: false },
+    { id: 'S26', label: 'S26', active: true },
     { id: 'F26', label: 'F26', active: false },
     { id: 'S27', label: 'S27', active: false },
     { id: 'F27', label: 'F27', active: false }
@@ -152,10 +162,58 @@ export default function About() {
               <div key="F25" className="animate-fade-up">
                 <h3 className="font-serif text-3xl font-bold mb-4">{timelineData.F25.title}</h3>
                 <h4 className="text-xl font-semibold mb-8 text-gray-700">{timelineData.F25.subtitle}</h4>
-                
+
+                {/* Three Images Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative">
+                    <Image
+                      src="/myImages/f25_meeting.jpg"
+                      alt="F25 Meeting"
+                      fill
+                      className="object-cover object-center"
+                      style={{ objectPosition: 'center 50%' }}
+                    />
+                  </div>
+                  <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative">
+                    <Image
+                      src="/myImages/f25_applepicking.jpg"
+                      alt="F25 Apple Picking"
+                      fill
+                      className="object-cover object-center"
+                      style={{ objectPosition: 'center 50%' }}
+                    />
+                  </div>
+                  <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative">
+                    <Image
+                      src="/myImages/f25_hackathon.jpg"
+                      alt="F25 Hackathon"
+                      fill
+                      className="object-cover object-center"
+                      style={{ objectPosition: 'center 50%' }}
+                    />
+                  </div>
+                </div>
+
                 {/* Text Content */}
                 <div className="space-y-4 text-lg leading-relaxed">
                   <p>{timelineData.F25.content}</p>
+                  <p>{timelineData.F25.additionalContent}</p>
+                  <p>{timelineData.F25.additionalContent2}</p>
+                  <p>{timelineData.F25.additionalContent3}</p>
+                  <p>{timelineData.F25.additionalContent4}</p>
+                  <p>{timelineData.F25.additionalContent5}</p>
+                </div>
+              </div>
+            )}
+
+            {activePeriod === 'S26' && (
+              <div key="S26" className="animate-fade-up">
+                <h3 className="font-serif text-3xl font-bold mb-4">{timelineData.S26.title}</h3>
+                <h4 className="text-xl font-semibold mb-8 text-gray-700">{timelineData.S26.subtitle}</h4>
+
+                {/* Text Content */}
+                <div className="space-y-4 text-lg leading-relaxed">
+                  <p>{timelineData.S26.content}</p>
                 </div>
               </div>
             )}
