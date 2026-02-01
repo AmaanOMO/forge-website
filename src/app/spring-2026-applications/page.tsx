@@ -1,133 +1,137 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 
-export default function Spring2026Applications() {
-  const scrollToOpenPositions = () => {
-    const element = document.getElementById('open-positions')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }
+const HERO_VIDEOS = [
+  '/addedVids/calhacks.mp4',
+  '/addedVids/calhack2.mp4',
+  '/addedVids/calhack3.mp4',
+  '/addedVids/pittsburgh.mp4',
+  '/addedVids/spurhacks2.mp4'
+]
+const HERO_VIDEO_DURATION_MS = 3000
 
-  const positions = [
-    {
-      title: 'Director of Marketing',
-      description: 'Responsible for managing Forge\'s public presence.',
-      responsibilities: [
-        'Run and schedule content on social platforms',
-        'Work with current Marketing Director on brand direction',
-        'Help design Forge merch + event promo materials'
-      ]
-    },
-    {
-      title: 'Director of Events & Programming',
-      description: 'Runs planning + logistics for Forge events.',
-      responsibilities: [
-        'Organize weekly SunSesh events & guest speakers',
-        'Coordinate space, supplies, food, scheduling',
-        'Work directly with Ops + Finance to deliver smooth events'
-      ]
-    },
-    {
-      title: 'Director of Partnerships',
-      description: 'Forging relationships with companies, startups, and brands.',
-      responsibilities: [
-        'Reach out to companies for speakers & partnerships',
-        'Help secure sponsorships + opportunities for members',
-        'Maintain long-term relationships with partners'
-      ]
-    },
-    {
-      title: 'Director of Finance',
-      description: 'Responsible for all money, purchases, and budgeting.',
-      responsibilities: [
-        'Track Forge\'s budget + expenses',
-        'Handle reimbursement processes',
-        'Lead fundraising initiatives'
-      ]
-    },
-    {
-      title: 'Director of Growth & Community',
-      description: 'Builds community vibes and engagement.',
-      responsibilities: [
-        'Plan fun social events (apple picking, ice skating, potlucks)',
-        'Member onboarding + engagement',
-        'Help grow Forge\'s culture + retention'
-      ]
+export default function Spring2026Applications() {
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
+  const currentIndexRef = useRef(0)
+  currentIndexRef.current = currentVideoIndex
+
+  // Play current video when index changes
+  useEffect(() => {
+    const video = videoRefs.current[currentVideoIndex]
+    if (video) {
+      video.currentTime = 0
+      video.play().catch(() => {})
     }
-  ]
+  }, [currentVideoIndex])
+
+  // Pre-start next video ~250ms before switch so it's already playing when we crossfade (removes pause on loop)
+  useEffect(() => {
+    const PRELOAD_BEFORE_SWITCH_MS = 250
+    const interval = setInterval(() => {
+      const nextIndex = (currentIndexRef.current + 1) % HERO_VIDEOS.length
+      const nextVideo = videoRefs.current[nextIndex]
+      if (nextVideo) {
+        nextVideo.currentTime = 0
+        nextVideo.play().catch(() => {})
+        setTimeout(() => setCurrentVideoIndex(nextIndex), PRELOAD_BEFORE_SWITCH_MS)
+      } else {
+        setCurrentVideoIndex(nextIndex)
+      }
+    }, HERO_VIDEO_DURATION_MS)
+    return () => clearInterval(interval)
+  }, [])
 
   const pillars = [
-    { name: 'Reliability' },
-    { name: 'Communication' },
-    { name: 'Ownership' },
-    { name: 'Passion for building' }
+    { name: 'Ambition' },
+    { name: 'Innovation' },
+    { name: 'Consistency' },
+    { name: 'Ownership' }
+  ]
+
+  const fellowActivities = [
+    { label: 'Build', text: 'Build consistently throughout the semester' },
+    { label: 'Meet', text: 'Meet weekly on Tuesday nights for accountability and resources' },
+    { label: 'Work', text: 'Work in teams or solo inside the Forge Foundry' },
+    { label: 'Present', text: 'Present their projects at Forge Demo Day' }
   ]
 
   return (
     <div className="w-full min-h-screen bg-[#f9f6f2] text-black">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="w-full py-16 px-8 md:px-16 bg-gradient-to-br from-[#f9f6f2] to-[#fdfcf8]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-black">
-            Forge E-Board Applications - Spring 2026
-          </h1>
-          <p className="text-xl md:text-2xl leading-relaxed mb-12 text-gray-700 max-w-3xl mx-auto">
-            Help lead the fastest-growing builder community at UB.
-          </p>
-          <div className="flex flex-col gap-4 justify-center items-center mb-6">
-            <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfgHsK5jLkvzi4jLTWVS2rDqkje4WHu9hR2sveXCaif1wMsqA/viewform?usp=publish-editor"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#005bbb] text-white px-12 py-4 rounded-full font-bold text-xl hover:bg-[#004499] transition-colors duration-300 shadow-lg"
-            >
-              Apply Now
-            </a>
-            <button
-              onClick={scrollToOpenPositions}
-              className="text-[#005bbb] underline hover:text-[#004499] transition-colors text-lg font-medium"
-            >
-              View open roles below
-            </button>
-          </div>
+      {/* Hero Section - video slideshow background */}
+      <section className="w-full py-16 px-8 md:px-16">
+        <div className="max-w-6xl mx-auto relative rounded-2xl overflow-hidden min-h-[450px] md:min-h-[560px] flex items-center justify-center bg-gray-800 shadow-lg animate-fade-up">
+            {/* Autoplaying video slideshow: 3 clips, 3s each, loops */}
+            {HERO_VIDEOS.map((src, index) => (
+              <video
+                key={src}
+                ref={(el) => { videoRefs.current[index] = el }}
+                src={src}
+                muted
+                playsInline
+                preload="auto"
+                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 [filter:grayscale(40%)_sepia(25%)]"
+                style={{ opacity: index === currentVideoIndex ? 1 : 0, zIndex: index === currentVideoIndex ? 1 : 0 }}
+              />
+            ))}
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-black/50 z-[2]" />
+            {/* Hero content - white/light text */}
+            <div className="relative z-[3] max-w-4xl mx-auto text-center px-6 py-12">
+              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-white">
+                Forge Foundry Applications - Spring 2026
+              </h1>
+              <p className="text-xl md:text-2xl leading-relaxed mb-12 text-white/90 max-w-3xl mx-auto">
+                Where Forge Fellows build.
+              </p>
+              <div className="flex flex-col gap-4 justify-center items-center mb-6">
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfVevwl5TjYbpSoXmKG5v9NSHHfGuX-InTIHbzFln9oFSwJng/viewform?usp=header"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#005bbb] text-white px-12 py-4 rounded-full font-bold text-xl hover:bg-[#004499] transition-colors duration-300 shadow-lg"
+                >
+                  Apply Now
+                </a>
+              </div>
+            </div>
         </div>
       </section>
 
-      {/* Open Positions Section */}
-      <section id="open-positions" className="w-full py-16 px-8 md:px-16">
+      {/* What It is Section */}
+      <section id="what-it-is" className="w-full py-16 px-8 md:px-16 bg-[#fdfcf8]">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6 text-center text-black">
+            What It is
+          </h2>
+          <p className="text-lg md:text-xl leading-relaxed text-center text-gray-700 max-w-3xl mx-auto">
+            The Forge Foundry is the execution engine of the Forge Fellowship. We are a selective, semester-long program for students who want to build startups, technical projects, or products with real momentum.
+          </p>
+        </div>
+      </section>
+
+      {/* What Fellows Do Section - Horizontal path with labels */}
+      <section className="w-full py-16 px-8 md:px-16 bg-[#f9f6f2]">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-12 text-center text-black">
-            Open Positions
+            What Fellows Do
           </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {positions.map((position, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100"
-              >
-                <h3 className="font-serif text-2xl font-bold mb-3 text-black">
-                  {position.title}
-                </h3>
-                <p className="text-gray-700 mb-4 leading-relaxed">
-                  {position.description}
-                </p>
-                <ul className="space-y-2">
-                  {position.responsibilities.map((responsibility, idx) => (
-                    <li key={idx} className="text-gray-600 flex items-start">
-                      <span className="text-[#005bbb] mr-2">•</span>
-                      <span>{responsibility}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
+              {fellowActivities.map((activity, index) => (
+                <div key={index} className="flex flex-col items-center text-center relative z-10">
+                  <span className="font-serif text-xl md:text-2xl font-bold text-[#005bbb] mb-2">
+                    {activity.label}
+                  </span>
+                  <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+                    {activity.text}
+                  </p>
+                </div>
+              ))}
           </div>
         </div>
       </section>
@@ -155,7 +159,7 @@ export default function Spring2026Applications() {
           </div>
           
           <p className="text-lg md:text-xl leading-relaxed text-center text-gray-700 max-w-3xl mx-auto">
-            We're selecting people who consistently show up and want to build something meaningful on campus.
+            We're looking for people who don't just want to learn, but want to ship.
           </p>
         </div>
       </section>
@@ -164,7 +168,7 @@ export default function Spring2026Applications() {
       <section className="w-full py-16 px-8 md:px-16 bg-[#f9f6f2]">
         <div className="max-w-4xl mx-auto text-center">
           <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfgHsK5jLkvzi4jLTWVS2rDqkje4WHu9hR2sveXCaif1wMsqA/viewform?usp=publish-editor"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfVevwl5TjYbpSoXmKG5v9NSHHfGuX-InTIHbzFln9oFSwJng/viewform?usp=header"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-[#005bbb] text-white px-12 py-4 rounded-full font-bold text-xl hover:bg-[#004499] transition-colors duration-300 shadow-lg"
