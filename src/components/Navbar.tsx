@@ -97,7 +97,7 @@ const Navbar = () => {
           Startup Fair
         </Link>
         <Link href="/spring-2026-applications" className="animated-blue-text">
-          Directors 2026
+          Foundry 2026
         </Link>
       </div>
 
@@ -151,7 +151,7 @@ const Navbar = () => {
               className="block py-2 animated-blue-text"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Directors 2026
+              Foundry 2026
             </Link>
             
             {/* Mobile Culture Dropdown */}
