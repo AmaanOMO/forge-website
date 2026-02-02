@@ -55,7 +55,7 @@ export default function Spring2026Applications() {
   const fellowActivities = [
     { label: 'Build', text: 'Build consistently throughout the semester' },
     { label: 'Meet', text: 'Meet weekly on Tuesday nights for accountability and resources' },
-    { label: 'Work', text: 'Work in teams or solo inside the Forge Foundry' },
+    { label: 'Work', text: 'Work in teams or solo inside the Forge Fellowship' },
     { label: 'Present', text: 'Present their projects at Forge Demo Day' }
   ]
 
@@ -84,7 +84,7 @@ export default function Spring2026Applications() {
             {/* Hero content - white/light text */}
             <div className="relative z-[3] max-w-4xl mx-auto text-center px-6 py-12">
               <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-white">
-                Forge Foundry Applications - Spring 2026
+                Forge Fellowship Applications - Spring 2026
               </h1>
               <p className="text-xl md:text-2xl leading-relaxed mb-12 text-white/90 max-w-3xl mx-auto">
                 Where Forge Fellows build.
@@ -110,7 +110,7 @@ export default function Spring2026Applications() {
             What It is
           </h2>
           <p className="text-lg md:text-xl leading-relaxed text-center text-gray-700 max-w-3xl mx-auto">
-            The Forge Foundry is the execution engine of the Forge Fellowship. We are a selective, semester-long program for students who want to build startups, technical projects, or products with real momentum.
+            A selective, semester-long program for students who want to build startups, technical projects, or products with real momentum.
           </p>
         </div>
       </section>
